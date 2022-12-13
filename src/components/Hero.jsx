@@ -5,6 +5,7 @@ import client3 from "../assets/client-meet.svg";
 import client4 from "../assets/client-maker.svg";
 import heroImgDesktop from "../assets/image-hero-desktop.png";
 import heroImgMobile from "../assets/image-hero-mobile.png";
+import Button from "../constants/Button";
 
 
 const Hero = () => {
@@ -17,11 +18,9 @@ const Hero = () => {
         <p className="text-gray py-10">
           Get your team in sync, no matter your location. <br />
           Streamline processes, create team rituals, and <br /> watch
-          productivity soar.{" "}
+          productivity soar.
         </p>
-        <button className="bg-black text-white py-3 px-6 rounded-xl cursor-pointer border border-black animate-bounce transition-all hover:bg-white hover:text-black">
-          Learn more
-        </button>
+        <Button/>
         <div className="clients flex items-center space-x-10 mt-[100px]">
           <img className="w-[100px] cursor-pointer transition-all duration-500 hover:scale-150" src={client1} alt="databiz" />
           <img className="w-[100px] cursor-pointer transition-all duration-500 hover:scale-150" src={client2} alt="databiz" />

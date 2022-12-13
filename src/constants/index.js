@@ -1,19 +1,28 @@
+import todoIcon from "../assets/icon-todo.svg";
+import calendarIcon from "../assets/icon-calendar.svg";
+import remindersIcon from "../assets/icon-reminders.svg";
+import planningIcon from "../assets/icon-planning.svg";
+
 export const features = [
     {
         id: 1,
-        title: "Todo List"
+        title: "Todo List",
+        img: todoIcon
     },
     {
         id: 2,
-        title: "Calendar"
+        title: "Calendar",
+        img: calendarIcon
     },
     {
         id: 3,
-        title: "Reminders"
+        title: "Reminders",
+        img: remindersIcon
     },
     {
         id: 4,
-        title: "Planning"
+        title: "Planning",
+        img: planningIcon
     },
 ];
 
