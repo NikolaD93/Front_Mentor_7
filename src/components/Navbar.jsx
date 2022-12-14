@@ -10,6 +10,8 @@ import { useState } from "react";
 const Navbar = () => {
   const [toggleDropdownOne, setToggleDropdownOne] = useState(true);
   const [toggleDropdownTwo, setToggleDropdownTwo] = useState(true);
+  const [toggleDropdownThree, setToggleDropdownThree] = useState(true);
+  const [toggleDropdownFour, setToggleDropdownFour] = useState(true);
 
   const [toggle, setToggle] = useState(true);
 
@@ -19,6 +21,14 @@ const Navbar = () => {
 
   const handleDropdownTwo = () => {
     setToggleDropdownTwo((prev) => !prev);
+  };
+
+  const handleDropdownThree = () => {
+    setToggleDropdownThree((prev) => !prev);
+  };
+
+  const handleDropdownFour = () => {
+    setToggleDropdownFour((prev) => !prev);
   };
 
   const handleToggle = () => {
@@ -33,23 +43,37 @@ const Navbar = () => {
           src={logo}
           alt="logo-image"
         />
-        <ul className="hidden sm:flex space-x-10 text-gray transition-all hover:text-black">
-          <li onClick={handleDropdownOne}>
+        <ul className="hidden sm:flex space-x-10 text-gray">
+          <li
+            className="transition-all hover:text-black"
+            onClick={handleDropdownOne}
+          >
             <a href="#">
               Features
-              <img className="inline ml-2" src={arrowDown} alt="arrow-down" />
+              <img
+                className="inline ml-2"
+                src={toggleDropdownOne ? arrowDown : arrowUp}
+                alt="arrow-down"
+              />
             </a>
           </li>
-          <li onClick={handleDropdownTwo}>
+          <li
+            className="transition-all hover:text-black"
+            onClick={handleDropdownTwo}
+          >
             <a href="#">
               Company
-              <img className="inline ml-2" src={arrowDown} alt="arrow-down" />
+              <img
+                className="inline ml-2"
+                src={toggleDropdownTwo ? arrowDown : arrowUp}
+                alt="arrow-down"
+              />
             </a>
           </li>
-          <li>
+          <li className="transition-all hover:text-black">
             <a href="#">Careers</a>
           </li>
-          <li>
+          <li className="transition-all hover:text-black">
             <a href="#">About</a>
           </li>
         </ul>
@@ -62,31 +86,48 @@ const Navbar = () => {
 
         <div
           className={`${
-            toggle ? "hidden" : "block"
-          } absolute top-[100%] left-[35%] w-[500px] h-[100vh] z-10 px-8 pt-10 bg-white`}
+            toggle ? "hidden" : "block md:hidden"
+          } absolute top-[90%] left-[35%] w-[500px] text-[18px] h-[100vh] z-10 px-8 pt-10 bg-white`}
         >
           <ul className="space-y-6 text-gray ">
-            <li>
+            <li
+              onClick={handleDropdownThree}
+              className="transition-all hover:text-black"
+            >
               <a href="#">Features</a>
-              <img className="inline ml-2" src={arrowDown} alt="arrow-down" />
+              <img
+                className="inline ml-2"
+                src={toggleDropdownThree ? arrowDown : arrowUp}
+                alt="arrow-down"
+              />
             </li>
-            <ul>
+            <ul className={`${toggleDropdownThree ? "hidden" : "block"}`}>
               {features.map((feature, idx) => {
                 return (
-                  <li  key={feature.id}>
+                  <li
+                    className="flex items-center space-x-4 space-y-2"
+                    key={feature.id}
+                  >
                     <img src={feature.img} alt="icon" />
-                    <a className="transition-all hover:translate-x-2" href="#">
+                    <a className="transition-all hover:text-black" href="#">
                       {feature.title}
                     </a>
                   </li>
                 );
               })}
             </ul>
-            <li>
+            <li
+              onClick={handleDropdownFour}
+              className="transition-all hover:text-black"
+            >
               <a href="#">Company</a>
-              <img className="inline ml-2" src={arrowDown} alt="arrow-down" />
+              <img
+                className="inline ml-2"
+                src={toggleDropdownFour ? arrowDown : arrowUp}
+                alt="arrow-down"
+              />
             </li>
-            <ul>
+            <ul className={`${toggleDropdownFour ? "hidden" : "block"}`}>
               {company.map((item, idx) => {
                 return (
                   <li
@@ -95,23 +136,23 @@ const Navbar = () => {
                     } flex items-center ml-8 mb-4`}
                     key={item.id}
                   >
-                    <a className="transition-all hover:translate-x-2" href="#">
+                    <a className="transition-all hover:text-black" href="#">
                       {item.title}
                     </a>
                   </li>
                 );
               })}
             </ul>
-            <li>
+            <li className="transition-all hover:text-black">
               <a href="#">Careers</a>
             </li>
-            <li>
+            <li className="transition-all hover:text-black">
               <a href="#">About</a>
             </li>
           </ul>
 
-          <div className="flex flex-col items-center w-[200px] mt-10">
-            <p className="cursor-pointer text-gray py-2 transition-all hover:text-black">
+          <div className="flex flex-col items-center w-[200px] mt-10 ml-2">
+            <p className="cursor-pointer text-gray py-2 mb-2 transition-all hover:text-black">
               Login
             </p>
             <button className="border w-[100%] border-gray text-gray rounded-xl px-4 py-2 transition-all hover:bg-black hover:text-white">
