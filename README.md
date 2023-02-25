@@ -1,5 +1,6 @@
 This is a solution to the [Intro section with dropdown navigation challenge on Frontend Mentor]
 (https://www.frontendmentor.io/challenges/intro-section-with-dropdown-navigation-ryaPetHE5). 
+
 Used React.js, Tailwind and Vite.js.
 
 # [Live Website Preview](https://frontmentor7nikola93.netlify.app).
